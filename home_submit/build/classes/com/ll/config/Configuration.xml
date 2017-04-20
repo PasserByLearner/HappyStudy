@@ -46,5 +46,6 @@
   </environments>
   <mappers>
   <mapper resource="com/ll/config/sqlxml/Student.xml"/>
+  <mapper resource="com/ll/config/sqlxml/HomeWork.xml"/>
    </mappers>  
 </configuration>
