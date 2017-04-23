@@ -35,4 +35,16 @@
    <select id="queryStudentList" resultMap="StudentResult">
      select id,name,student_id,class_name,sex,password from student2 where 1=1
    </select> 
+   <select id="studentsignin" parameterType="com.ll.bean.Student" resultMap="StudentResult">
+     select id,name,student_id,class_name,sex,password from student2 where student_id=#{Student_Id} and password=#{Password}
+     
+   </select> 
+   <select id="searchstudentid" parameterType="String" resultMap="StudentResult">
+     select id,name,student_id,class_name,sex,password from student2 where student_id=#{_parameter} 
+     
+   </select> 
+   <insert id="studentregister" parameterType="com.ll.bean.Student" >
+     insert into student2 (name,student_id,class_name,sex,password) values(#{Name},#{Student_Id},#{Student_Class},#{Sex},#{Password})
+     
+   </insert>
 </mapper>

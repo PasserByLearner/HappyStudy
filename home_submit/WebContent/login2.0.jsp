@@ -12,42 +12,15 @@ http-equiv="X-UA-Compatible">
 <TITLE>登录页面</TITLE> 
 <link rel="stylesheet" type="text/css" href="<%= basePath %>resources/css/2_0.css"/>
 <SCRIPT src="<%= basePath %>resources/js/jquery-1.9.1.min.js" type="text/javascript"></SCRIPT>
+
  <STYLE>
 
 
 </STYLE>
      
-<SCRIPT type="text/javascript">
-$(function(){
-	//得到焦点
-	$("#password").focus(function(){
-		$("#left_hand").animate({
-			left: "150",
-			top: " -38"
-		},{step: function(){
-			if(parseInt($("#left_hand").css("left"))>140){
-				$("#left_hand").attr("class","left_hand");
-			}
-		}}, 2000);
-		$("#right_hand").animate({
-			right: "-64",
-			top: "-38px"
-		},{step: function(){
-			if(parseInt($("#right_hand").css("right"))> -70){
-				$("#right_hand").attr("class","right_hand");
-			}
-		}}, 2000);
-	});
-	//失去焦点
-	$("#password").blur(function(){
-		$("#left_hand").attr("class","initial_left_hand");
-		$("#left_hand").attr("style","left:100px;top:-12px;");
-		$("#right_hand").attr("class","initial_right_hand");
-		$("#right_hand").attr("style","right:-112px;top:-12px");
-	});
-});
-</SCRIPT>
- 
+ <SCRIPT src="<%= basePath %>resources/js/login2.js" type="text/javascript"></SCRIPT>    
+
+
 <META name="GENERATOR" content="MSHTML 11.00.9600.17496"></HEAD> 
 <BODY>
 <DIV class="top_div">
@@ -58,8 +31,9 @@ $(function(){
 <DIV class="tou"></DIV>
 <DIV class="initial_left_hand" id="left_hand"></DIV>
 <DIV class="initial_right_hand" id="right_hand"></DIV></DIV>
+<form id="form1">
 <P style="padding: 30px 0px 10px; position: relative;"><SPAN 
-class="u_logo"></SPAN>         <INPUT class="ipt" type="text" placeholder="请输入用户名或邮箱" value=""> 
+class="u_logo"></SPAN>         <INPUT class="ipt" type="text" id="username" placeholder="请输入用户名或邮箱" value=""> 
     </P>
 <P style="position: relative;"><SPAN class="p_logo"></SPAN>         
 <INPUT class="ipt" id="password" type="password" placeholder="请输入密码" value="">   
@@ -70,8 +44,7 @@ href="#">忘记密码?</A></SPAN>
            <SPAN style="float: right;"><A style="color: rgb(204, 204, 204); margin-right: 10px;" 
 href="#">注册</A>  
               <A style="background: rgb(0, 142, 173); padding: 7px 10px; border-radius: 4px; border: 1px solid rgb(26, 117, 152); border-image: none; color: rgb(255, 255, 255); font-weight: bold;" 
-href="#">登录</A> 
+href="javascript:load()" >登录</A> 
            </SPAN>         </P></DIV></DIV>
-		   <div style="text-align:center;">
-<p>来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
+</form>
 </div></BODY></HTML>
