@@ -33,4 +33,13 @@
     <servlet-name>insertoneservelt</servlet-name>
     <url-pattern>/register</url-pattern>
   </servlet-mapping>
+  <servlet>
+  	<servlet-name>setHomeWork</servlet-name>
+  	<servlet-class>com.ll.servlet.setHomeWork</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>setHomeWork</servlet-name>
+  	<url-pattern>/setHomeWork</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

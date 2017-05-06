@@ -26,6 +26,23 @@ public class HomeWorkDao {
 		}
 	    return homeWorkList; 
 	 }
+	
+	public void setHomeWork(HomeWork homeWork){
+		DBAccess dbAccess = new DBAccess();
+		System.out.println("start in");
+		SqlSession sqlSession = null;
+		try{
+			sqlSession = dbAccess.getSqlSession();
+			sqlSession.insert("HomeWork.setHomeWork", homeWork);
+			sqlSession.commit();
+		} catch(IOException e){
+			e.printStackTrace();
+		} finally {
+			if (sqlSession != null)
+			sqlSession.close();
+		}
+		return;
+	}
 	public static void main(String[] args) {
 		 HomeWorkDao studentDao = new HomeWorkDao();
 		 List<HomeWork> list = studentDao.queryHomeWorkList("", "");

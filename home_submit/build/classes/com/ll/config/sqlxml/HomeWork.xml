@@ -34,4 +34,7 @@
    <select id="queryHomeWorkList" resultMap="HomeWorkResult">
      select homework_id,name,description,start_time,end_time from homework where 1=1
    </select> 
+   <select id="setHomeWork" parameterType="com.ll.bean.HomeWork">
+   	insert into homework (name,description,start_time,end_time) values(#{Name},#{Description},#{Start_time},#{End_time})
+   </select>
 </mapper>

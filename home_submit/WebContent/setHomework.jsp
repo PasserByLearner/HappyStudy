@@ -24,16 +24,16 @@ arr[10] = 'T';
 <div class="current" style="background-color:#c0c0c0;width:auto;height:34px;border: 1px solid #ccc;-webkit-box-shadow: 1px 1px 4px rgba(0,0,0, 0.1);-webkit-border-bottom-right-radius: 60px 5px;">当前位置：<a href="javascript:void(0)" style="color:#6E6E6E;">学生管理</a> &gt; 学生信息列表</div>
 <div class="fillall">
 	<div class="setForm">
-		<form accept-charset="UTF-8" action="" class="file-commit-form manifest-commit-form js-file-commit-form js-manifest-commit-form" method="post">
+		<form accept-charset="UTF-8" action="setHomeWork" class="file-commit-form manifest-commit-form js-file-commit-form js-manifest-commit-form" method="post">
 			<div class="commit-form position-relative p-3 mb-2 border rounded-1">
 				<h3 style="font-size:25px;">布置作业</h3>
 				<label for="commit-summary-input" class="d-none"></label>
 				<input id="commit-summary-input" name="name" type="text" class="form-control input-block input-contrast js-new-blob-commit-summary" placeholder="输入作业名称" autocomplete="off" />
 				<label for="commit-description-textarea" class="d-none"></label>
 				<textarea id="commit-description-textarea" name="description" class="form-control input-block input-contrast comment-form-textarea js-quick-submit" placeholder="添加作业描述(不超过200字)" style="resize:none;height:100px;" maxlength="200""></textarea>
-				<label for="commit-datestart-input" class="d-none"></label>
+				<label for="commit-datestart-input" class="d-none">开始</label>
 				<input id="commit-datestart-input" name="start_time" type="datetime-local" class="form-control input-block input-contrast js-new-blob-commit-summary" value="<%= arr %>" min="<%= arr %>"/>
-				<label for="commit-dateend-input" class="d-none"></label>
+				<label for="commit-dateend-input" class="d-none">结束</label>
 				<input id="commit-dateend-input" name="end_time" type="datetime-local" class="form-control input-block input-contrast js-new-blob-commit-summary" value="<%= arr %>" min="<%= arr %>"/>
 			</div>
 			<button type="submit" class="btn btn-primary js-blob-submit" data-edit-text="Commit changes" data-pull-text="Propose changes">作业布置提交</button>
