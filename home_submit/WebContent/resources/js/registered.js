@@ -71,15 +71,20 @@ function loadXMLDoc(url,cfunc)
 function load()
 {
 	//alert("xxxx");
-
-
+	var sex;
+	var obj = document.getElementsByTagName("input");
+    for(var i=0; i<obj.length; i ++){
+        if(obj[i].checked){
+            sex=obj[i].value;
+        }
+    }
 var user=document.getElementById('student_id').value
 var pass=document.getElementById('password').value
 var pass2=document.getElementById('password2').value
-var sex=document.getElementById('sex').value
+//var sex = document.getElementsByName('sex').value
 var classname=document.getElementById('classname').value
 var name=document.getElementById('name').value
-
+//alert(sex);
 if(user==""){alert("用户名不能为空");return}
 if(pass==""){alert("密码不能为空");return}
 if(pass2==""||pass2!=pass){alert("两次密码不一样");return}
@@ -87,7 +92,7 @@ if(name==""){alert("姓名不能为空");return}
 if(classname==""){alert("班级名不能为空");return}
 if(sex==""){alert("性别");return}
 
-alert(user+":"+pass);
+
 
 	
 	loadXMLDoc("register?student_id="+user+"&password="+pass+"&name="+name+"&classname="+classname+"&sex="+sex,load1);
@@ -99,11 +104,11 @@ function load1()
 {
 	if(xmlhttp.readyState == 4&&xmlhttp.status ==200)
 		{
-		alert('处理完毕');
+		//alert('处理完毕');
 		var flag = xmlhttp.responseXML.getElementsByTagName( 
 		 "flag")[0].firstChild.nodeValue;
 	
-		alert( flag );
+		//alert( flag );
 		if( flag == "false" ){
 			alert( "该学号已注册" );
 		}
