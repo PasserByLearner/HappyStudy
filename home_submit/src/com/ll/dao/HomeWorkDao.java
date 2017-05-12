@@ -11,13 +11,13 @@ import com.ll.db.DBAccess;
 
 public class HomeWorkDao {
 	
-	public List<HomeWork> queryHomeWorkList(String homework_id, String name){
+	public List<HomeWork> queryHomeWorkList(String homework_id){
 		DBAccess dbAcess = new DBAccess();
 		List<HomeWork> homeWorkList = new ArrayList<HomeWork>();
 		SqlSession sqlSession = null;
 		try{
 			sqlSession = dbAcess.getSqlSession();
-		    homeWorkList = sqlSession.selectList("HomeWork.queryHomeWorkList");
+		    homeWorkList = sqlSession.selectList("HomeWork.queryHomeWorkList",homework_id);
 		}catch(IOException e){
 		    e.printStackTrace();
 		}finally {
@@ -26,7 +26,6 @@ public class HomeWorkDao {
 		}
 	    return homeWorkList; 
 	 }
-	
 	public void setHomeWork(HomeWork homeWork){
 		DBAccess dbAccess = new DBAccess();
 		System.out.println("start in");
@@ -42,12 +41,6 @@ public class HomeWorkDao {
 			sqlSession.close();
 		}
 		return;
-	}
-	public static void main(String[] args) {
-		 HomeWorkDao studentDao = new HomeWorkDao();
-		 List<HomeWork> list = studentDao.queryHomeWorkList("", "");
-		 System.out.println(list.size());
-		
 	}
 
 }

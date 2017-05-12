@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 import com.ll.bean.Student;
@@ -47,8 +48,9 @@ public class StudentSigninservelt extends HttpServlet {
 		
 		if(list.isEmpty()){fileContent= "<result><flag>false</flag></result>";}
 		else{fileContent="<result><flag>true</flag></result>";
-		request.getSession().setAttribute("student", list.get(0));}
-		//String fileContent="<result><flag>true</flag></result>";
+		HttpSession session = request.getSession();  
+		session.setAttribute("name", list.get(0).getName());
+		session.setAttribute("id", list.get(0).getStudent_Id());}
 		response.setContentType("text/xml;charset=UTF-8");
         PrintWriter out = response.getWriter();
         out.write(fileContent);

@@ -54,10 +54,8 @@ var user=document.getElementById('username').value
 var pass=document.getElementById('password').value
 if(user==""){alert("用户名不能为空");return}
 if(pass==""){alert("密码不能为空");return}
-alert(user+":"+pass);
 
-	
-	loadXMLDoc("Signin?username="+user+"&password="+pass,load1);
+loadXMLDoc("Signin?username="+user+"&password="+pass,load1);
 }
 	
 
@@ -66,7 +64,6 @@ function load1()
 {
 	if(xmlhttp.readyState == 4&&xmlhttp.status ==200)
 		{
-		alert('处理完毕');
 		var flag = xmlhttp.responseXML.getElementsByTagName( 
 		 "flag")[0].firstChild.nodeValue;
 	
@@ -76,7 +73,7 @@ function load1()
 		}
 		else{
 			alert("登录成功");
-			window.location.href="main.jsp";
+			window.location.href="/home_submit/WorkList.action";
 		}
 		}
 }

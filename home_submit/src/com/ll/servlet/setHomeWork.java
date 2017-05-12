@@ -64,6 +64,12 @@ public class setHomeWork extends HttpServlet {
 		homeWork.setEnd_time(end_time);
 		HomeWorkDao homeworkDao = new HomeWorkDao();
 		homeworkDao.setHomeWork(homeWork);
+        
+		request.getRequestDispatcher("/WorkList.action").forward(request,response);
+		
+//		PrintWriter out = response.getWriter();
+//		out.write(setWork);
+//		out.close();
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

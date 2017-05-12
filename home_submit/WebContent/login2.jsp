@@ -42,7 +42,7 @@ class="u_logo"></SPAN>         <INPUT class="ipt" type="text" id="username" plac
 <P style="margin: 0px 35px 20px 45px;"><SPAN style="float: left;"><A style="color: rgb(204, 204, 204);" 
 href="#">忘记密码?</A></SPAN> 
            <SPAN style="float: right;"><A style="color: rgb(204, 204, 204); margin-right: 10px;" 
-href="#">注册</A>  
+href="registered.jsp">注册</A>  
               <A style="background: rgb(0, 142, 173); padding: 7px 10px; border-radius: 4px; border: 1px solid rgb(26, 117, 152); border-image: none; color: rgb(255, 255, 255); font-weight: bold;" 
 href="javascript:load()" >登录</A> 
            </SPAN>         </P></DIV></DIV>

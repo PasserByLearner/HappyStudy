@@ -31,10 +31,15 @@
      <result column="end_time" jdbcType="TIMESTAMP" property="End_time"/>
   </resultMap>
    
-   <select id="queryHomeWorkList" resultMap="HomeWorkResult">
-     select homework_id,name,description,start_time,end_time from homework where 1=1
-   </select> 
-   <insert id="setHomeWork" parameterType="com.ll.bean.HomeWork">
+   <select id="queryHomeWorkList" resultMap="HomeWorkResult" parameterType="java.lang.String">
+     select homework_id,name,description,start_time,end_time from homework h
+     <where>
+        <if test="_parameter != null and !&quot;&quot;.equals(_parameter.trim())">
+	    	and h.homework_id=#{homework_id}
+	    </if>
+	    </where>
+    </select>
+    <select id="setHomeWork" parameterType="com.ll.bean.HomeWork">
    	insert into homework (name,description,start_time,end_time) values(#{Name},#{Description},#{Start_time},#{End_time})
-   </insert>
+   </select> 
 </mapper>

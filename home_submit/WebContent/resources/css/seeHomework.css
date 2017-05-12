@@ -1,0 +1,170 @@
+@CHARSET "UTF-8";
+body {
+	font-size: 11px;
+	font-family: 'Open Sans', sans-serif;
+	color: #4A4A4A;
+}
+/* 查看作业*/
+.dt {
+	width:780px; 
+	min-height: 700px;
+	padding: 10px;
+	border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+	background: -webkit-gradient(linear, 0% 20%, 0% 92%, from(#fff), to(#f3f3f3), color-stop(.1,#fff));
+	margin-left: 20%;
+	margin-top: 5%;
+	-webkit-border-top-left-radius: 60px 5px;
+    -webkit-border-top-right-radius: 60px 5px;
+    -webkit-border-bottom-right-radius: 60px 60px ;
+    -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3) ;
+    position:relative;
+}
+.dt:before {
+	content:'';    
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    bottom:0;
+    right:0;
+    -webkit-border-bottom-right-radius: 30px;
+    -webkit-box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.3);
+    -webkit-transform:
+    rotate(-20deg)
+    skew(-40deg,-3deg)
+    translate(-13px,-13px);
+}
+.dt:after {
+	content: '';
+    z-index: -10;
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    bottom:0;
+    right:0;
+    background: rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    -webkit-box-shadow: 20px 20px 8px rgba(0, 0, 0, 0.2);
+    -webkit-transform: rotate(0deg)
+                        translate(-45px,-20px)
+                           skew(20deg);
+}
+.dt1 {
+	width:780px;
+	text-indent:20px; 
+	background:#fff; 
+	float:left; 
+	font-size:14px;
+}
+table{
+	margin:30px; 
+}
+table span{
+	color:#06c; 
+	font-weight:bold
+}
+table i{
+	color:#f60; 
+	font-size:18px; 
+	font-weight:bold; 
+	font-family:Arial
+}
+td{
+	width:300px; 
+	height:40px; 
+	line-height:40px;
+}
+.dt2 {
+	width:780px; 
+	height:100px; 
+	float:left; 
+	font-size:12px;
+	border-bottom:1px solid #d7d7d7;
+}
+.dt2 li{
+	width:180px; 
+	height:50px; 
+	line-height:50px; 
+	text-align:center; 
+	color:#fff; 
+	background:#fd8000; 
+	float:left; 
+	font-size:24px; 
+	margin-left:50px;
+	font-family:"微软雅黑"; 
+	letter-spacing:4px;
+
+}
+.dt2 li {
+	background:#fd6000
+}
+.dt3 {
+	width:680px;
+	float:left; 
+	font-size:12px;
+	border-bottom:1px solid #d7d7d7; 
+	padding:30px 50px; 
+	font-size:14px; 
+	line-height:24px;
+}
+.setp {
+	width: 680px;
+	height: 40px;
+	line-height: 40px;
+	background: #f7f7f7;
+	color: #333;
+	font-weight: bold;
+	text-indent: 10px;
+	border: 1px solid #ddd;
+	margin-bottom: 30px;
+}
+.dt_corner_lf {
+	width: 100px;
+    height: 100px;
+    top:0; left:0;
+    position:absolute;
+    z-index:-6;
+    display: inline-block;
+    -webkit-box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.2);
+    -webkit-transform: rotate(2deg)
+                        translate(20px,25px)
+                           skew(20deg);
+}
+.dt_corner_rf {
+	content: '';
+    width: 50px;
+    height: 50px;
+    top:0; right:0;
+    position:absolute;
+    display: inline-block;
+    z-index:-6;
+    -webkit-box-shadow: 10px -10px 8px rgba(0, 0, 0, 0.2);
+    -webkit-transform: rotate(2deg)
+                        translate(-14px,20px)
+                           skew(-20deg);
+}
+.dt_ribbon:before {
+	content: '';
+    position:absolute;
+    top:0; left: 0;
+    width: 130px;
+    height: 40px;
+    background: -webkit-gradient(linear, 555% 20%, 0% 92%, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.0)), color-stop(.1,rgba(0, 0, 0, 0.2)));
+    border-left: 1px dashed rgba(0, 0, 0, 0.1);
+    border-right: 1px dashed rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+    -webkit-transform: rotate(90deg) skew(0,0) translate(100px,65px);
+}
+.dt_ribbon:after {
+	content: '';
+    position:absolute;
+    top:0; right: 0;
+    width: 130px;
+    height: 40px;
+    background: -webkit-gradient(linear, 555% 20%, 0% 92%, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.0)), color-stop(.1,rgba(0, 0, 0, 0.2)));
+    border-left: 1px dashed rgba(0, 0, 0, 0.1);
+    border-right: 1px dashed rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+    -webkit-transform: rotate(90deg) skew(0,0) translate(100px,-65px);
+}
