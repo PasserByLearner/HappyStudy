@@ -23,51 +23,40 @@ public class LoginFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
-		HttpServletRequest request = (HttpServletRequest) arg0;
+			HttpServletRequest request = (HttpServletRequest) arg0;
 		HttpServletResponse response = (HttpServletResponse) arg1;
 		HttpSession session = request.getSession();
+		String url = request.getRequestURI();
+		String contextPath = request.getContextPath();
+		System.out.println("请求的URL为：" + url);
+		System.out.println("请求的session为：" + session.getAttribute("name"));
 		
-		String noLoginPaths = config.getInitParameter("noLoginPaths");
-		
-		String charset = config.getInitParameter("charset");
-		if(charset==null){
-			charset = "UTF-8";
+		if(url.equals(contextPath + "/login2.jsp") || url.equals(contextPath + "/login") || url.equals(contextPath + "/Signin") 
+				|| url.equals(contextPath + "/registered.jsp") || url.equals(contextPath + "/registered") || url.indexOf("/images")!=-1)
+		{
+		    arg2.doFilter(arg0, arg1);
 		}
-		request.setCharacterEncoding(charset);
-		
-		if(noLoginPaths!=null){
-			String[] strArray = noLoginPaths.split(";");
-			for (int i = 0; i < strArray.length; i++) {
-				
-				if(strArray[i]==null || "".equals(strArray[i]))continue;
-				
-				if(request.getRequestURI().indexOf(strArray[i])!=-1 ){
-					arg2.doFilter(arg0, arg1);
-					return;
-				}
-			}
-			
-		}
-		
-		
-		
-		
-		if(session.getAttribute("name")!=null){
-			arg2.doFilter(arg0, arg1);
+		else if(url.contains(".css") || url.contains(".js")){
+
+		//如果发现是css或者js文件，直接放行
+		arg2.doFilter(arg0, arg1);
+		}else 
+		{
+		if("".equals(session.getAttribute("name")) || session.getAttribute("name") == null){
+        response.sendRedirect(contextPath + "/login2.jsp");
+		request.setAttribute("msg", "请先登录！");
+		return;
 		}else{
-			response.sendRedirect("login2.jsp");
+			arg2.doFilter(arg0, arg1);
 		}
-        
+	}
 	}
 
 	/**
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
-		config = fConfig;
+	
 	}
 
 	@Override
