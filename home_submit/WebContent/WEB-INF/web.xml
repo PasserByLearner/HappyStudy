@@ -91,5 +91,13 @@
         <filter-name>LoginFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+ <servlet>
+    <servlet-name>TeacherLogin</servlet-name>
+    <servlet-class>com.ll.servlet.Teacherlogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TeacherLogin</servlet-name>
+    <url-pattern>/teacherLogin</url-pattern>
+  </servlet-mapping>
  
 </web-app>

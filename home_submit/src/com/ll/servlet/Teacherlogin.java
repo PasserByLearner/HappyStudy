@@ -2,7 +2,6 @@ package com.ll.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,22 +10,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 import com.ll.bean.Student;
 import com.ll.service.ListService;
 
 /**
- * Servlet implementation class StudentSigninservelt
+ * Servlet implementation class TeacherLogin
  */
-@WebServlet("/StudentSigninservelt")
-public class StudentSigninservelt extends HttpServlet {
+@WebServlet("/TeacherLogin")
+public class Teacherlogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public StudentSigninservelt() {
+    public Teacherlogin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,26 +36,30 @@ public class StudentSigninservelt extends HttpServlet {
 		// TODO Auto-generated method stub
 		String fileContent="";
 		request.setCharacterEncoding("UTF-8");
-		ListService service = new ListService();
 		
 		String username= request.getParameter("username");
 		String password=request.getParameter("password");
 	
 		//System.out.println("servelt start");
-		List<Student> list  = service.studentsignin(request.getParameter("username"),request.getParameter("password"));
+		System.out.println(username + password);
 		
-		if(list.isEmpty()){fileContent= "<result><flag>false</flag></result>";}
-		else{fileContent="<result><flag>true</flag></result>";
+		if(username.equals("admin")&&password.equals("admin"))
+	   {
+		fileContent="<result><flag>true</flag></result>";
 		HttpSession session = request.getSession();  
-		session.setAttribute("name", list.get(0).getName());
-		session.setAttribute("id", list.get(0).getStudent_Id());
-		session.setAttribute("identity","Student");
-    }
+		session.setAttribute("name","Mr.Wu");
+		session.setAttribute("identity","Teacher");
+		session.setAttribute("id", "2333333333");
+		
+		}else{
+			fileContent= "<result><flag>false</flag></result>";
+		}
 		response.setContentType("text/xml;charset=UTF-8");
         PrintWriter out = response.getWriter();
         out.write(fileContent);
         out.close();
-	}
+		
+}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

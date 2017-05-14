@@ -1,4 +1,4 @@
-<%@ page language="java" import="com.ll.bean.Student" contentType="text/html; charset=utf-8"
+﻿<%@ page language="java" import="com.ll.bean.Student" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -177,7 +177,7 @@ table {
 	</c:forEach>
    </table>
 
-     <div class="dt2">
+     <div class="dt2" <c:if test="${sessionScope.identity== 'Student'}">style='visibility: hidden;'</c:if>>
 			<ul>
 				<a href="setHomework.jsp" ><li>布置作业</li></a>
 				<a href="<%=basePath %>/servlet/ListFileServlet"><li>作业提交情况</li></a>

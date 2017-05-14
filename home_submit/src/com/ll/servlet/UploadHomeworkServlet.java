@@ -129,19 +129,19 @@ public class UploadHomeworkServlet extends HttpServlet {
 		     }catch (FileUploadBase.FileSizeLimitExceededException e) {
 		      e.printStackTrace();
 		      request.setAttribute("message", "单个文件超出最大值！！！");
-		      request.getRequestDispatcher("/message.jsp").forward(request, response);
+		      request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 		      return;
 		     }catch (FileUploadBase.SizeLimitExceededException e) {
 		      e.printStackTrace();
 		      request.setAttribute("message", "上传文件的总的大小超出限制的最大值！！！");
-		      request.getRequestDispatcher("/message.jsp").forward(request, response);
+		      request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 		      return;
 		     }catch (Exception e) {
 		      message= "文件上传失败！";
 		      e.printStackTrace();
 		     }
 		     request.setAttribute("message",message);
-		     request.getRequestDispatcher("/message.jsp").forward(request, response);
+		     request.getRequestDispatcher("/WEB-INF/jsp/message.jsp").forward(request, response);
 		  }
 		   
 		  /**
