@@ -32,7 +32,7 @@ public class LoginFilter implements Filter {
 		System.out.println("ÇëÇóµÄsessionÎª£º" + session.getAttribute("name"));
 		
 		if(url.equals(contextPath + "/login2.jsp") || url.equals(contextPath + "/login") || url.equals(contextPath + "/Signin") 
-				|| url.equals(contextPath + "/registered.jsp") || url.equals(contextPath + "/registered") || 
+				|| url.equals(contextPath + "/registered.jsp") || url.equals(contextPath + "/register") || 
         url.indexOf("/images")!=-1 || url.equals(contextPath + "/teacherLogin"))
 		{
 		    arg2.doFilter(arg0, arg1);

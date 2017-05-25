@@ -24,12 +24,12 @@ http-equiv="X-UA-Compatible">
  <DIV class="top_div2">
 <h1>学生注册</h1>
 </DIV>
-<DIV style="background: rgb(255, 255, 255); margin: -100px auto auto; border: 1px solid rgb(231, 231, 231); border-image: none; width: 400px; height: 310px; text-align: center;">
+<DIV style="background: rgb(255, 255, 255); margin: -100px auto auto; border: 1px solid rgb(231, 231, 231); border-image: none; width: 400px; height: 350px; text-align: center;">
 <DIV style="width: 165px; height: 150px; position: absolute;">
 <DIV class="tou"></DIV>
 <DIV class="initial_left_hand" id="left_hand"></DIV>
 <DIV class="initial_right_hand" id="right_hand"></DIV></DIV>
-<form name=" form2" action="register" method = "POST"></form>
+<form name=" form2" action="register" method = "POST">
 <P style="padding: 30px 0px 10px; position: relative;"><SPAN 
 class="u_logo"></SPAN>         <INPUT class="ipt" id = "student_id" type="number" placeholder="请输入用户名/学号" value=""> 
     </P>
@@ -45,15 +45,15 @@ class="u_logo"></SPAN>         <INPUT class="ipt" id = "student_id" type="number
   <P style="padding: 0px 0px 10px; position: relative;"><SPAN class="p_logo"></SPAN>         
 <INPUT class="ipt" id="classname" type="text" placeholder="请输入班级" value="">   
   </P>
-   <P style="padding: 0px 0px 10px; position: relative;"><SPAN class="p_logo"></SPAN>         
-<INPUT class="ipt" id="sex" type="text" placeholder="请输入性别" value="">   
-  </P>
+   <P style="padding: 0px 0px 10px; position: relative;"><SPAN class="p_logo"></SPAN><p style="padding: 0px 60px 0px;" align="left">       
+请选择性别： <input type="radio" name="sex" id="man" value="man" checked>男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" value="woman" >女 
+  </p></P>
 <DIV style="height: 20px; line-height: 0px; margin-top: 20px; border-top-color: rgb(231, 231, 231); border-top-width: 1px; border-top-style: solid;">
-<P style="margin: 0px 35px 0px 45px;">
+<P style="margin: 20px 35px 0px 45px;">
            <SPAN style="float:center;"><A style="background: rgb(0, 142, 173); padding: 7px 10px; border-radius: 4px; border: 1px solid rgb(26, 117, 152); border-image: none; color: rgb(255, 255, 255); font-weight: bold;" 
 href="javascript:load()">注册</A> 
              
-           </SPAN>         </P></DIV></DIV>
+           </SPAN>         </P></form></DIV></DIV>
 		  
 
 </div></BODY></HTML>
